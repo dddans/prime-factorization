@@ -1,0 +1,141 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(270deg, #f5f7fa, #c3cfe2, #f5f7fa);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* ===== Contenitore centrale ===== */
+.container {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #e6e6fa);
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* ===== Header ===== */
+header {
+    background: radial-gradient(circle, #667eea, #764ba2);
+    padding: 20px 0;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+/* ===== Input e pulsante ===== */
+input[type="number"] {
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: 2px solid #667eea;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    outline: none;
+    transition: 0.3s all;
+}
+
+input[type="number"]:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(118,75,162,0.6);
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s all;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== Titolo del risultato ===== */
+h2 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ===== Div risultato ===== */
+#risultato {
+    margin-top: 15px;
+    padding: 15px 25px;
+    background: linear-gradient(120deg, #fdfbfb, #ebedee);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    font-size: 1.5rem;
+    color: #222;
+    text-align: center;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+#risultato.show {
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-15px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+#risultato sup {
+    font-size: 0.7em;
+    vertical-align: super;
+    color: #764ba2;
+    font-weight: bold;
+}
+
+/* ===== Cerchi decorativi ===== */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 12s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0);}
+    100% { transform: translateY(-30px) translateX(50px);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    input[type="number"], button { font-size: 1rem; padding: 10px 20px; }
+    #risultato { font-size: 1.2rem; padding: 12px 18px; }
+}

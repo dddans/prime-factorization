@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Factorization</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Decorative circles -->
+<div class="circle" style="width:60px; height:60px; background:#667eea; top:50px; left:30px;"></div>
+<div class="circle" style="width:40px; height:40px; background:#764ba2; bottom:60px; right:50px;"></div>
+<div class="circle" style="width:80px; height:80px; background:#667eea; top:200px; right:150px;"></div>
+
+<div class="container">
+    <header>
+        <h1>Prime Factorization</h1>
+    </header>
+
+    <label for="inputN">Enter the number to factorize:</label><br>
+    <input type="number" id="inputN" placeholder="e.g. 64" />
+    <button onclick="factorize()">Factorize</button>
+
+    <h2>Result:</h2>
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
